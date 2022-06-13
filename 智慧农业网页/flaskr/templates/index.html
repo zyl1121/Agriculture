@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}" charset="utf-8">
+    <title>实时数据</title>
+</head>
+<body background="static/css/wallpaper.jpg">
+<form class="datalist">
+    <div>
+        <h3>实时数据<h3>
+    </div>
+    <div class="data">
+        <div>上传时间:</div>
+        <div class='time'>{{data.get('update_time')}}</div>
+        <div>空气温度:</div>
+        <div>{{data.get('temprature')}}°C</div>
+        <div>空气湿度:</div>
+        <div>{{data.get('hum')}}%</div>
+        <div>土壤湿度:</div>
+        <div>{{data.get('soil_h')}}</div>
+        <div>光照强度:</div>
+        <div>{{data.get('sunlight')}}</div>
+    </div>
+</form>
+{% if 0 == stop %}
+<meta http-equiv="refresh" content="2;url={{ url_for('index') }}">
+{% endif %}
+</body>
+</html>
